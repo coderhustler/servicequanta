@@ -1,0 +1,105 @@
+/* Navbar styles */
+.navbar-brand {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 2.5rem; /* Larger font size for prominence */
+    font-weight: 700; /* Bolder font weight */
+    color: #333; /* Darker color for better readability */
+}
+
+.navbar #navbarNav .custom-nav .nav-item a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add padding for a better click area */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar #navbarNav .custom-nav .nav-item a:hover {
+    color: #f0aab1;
+}
+
+/* Background image styling */
+/* Make Header Image Responsive */
+.back-image {
+    background: url('images/Banner1.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    border-radius: 0px;
+    margin-top: 74px;
+}
+  
+
+/* Font styling */
+.font-italic {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #666; /* Subtle color for a softer look */
+}
+
+.mainHeading {
+    margin-top: 3rem;
+    font-size: 3rem; /* Larger font size for prominence */
+    text-align: center; /* Center align heading */
+    color: #333; /* Darker color for readability */
+    font-weight: 700; /* Bold text */
+}
+
+/* Link styling */
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+a:active {
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 5px; /* Rounded corners for buttons */
+    padding: 0.2rem 0.5rem; /* Add padding */
+}
+
+a:hover {
+    color: #f26571;
+}
+
+/* FontAwesome color styling */
+.fi-color {
+    color: #dc3545 !important;
+}
+
+.fi-color:hover {
+    color: #e994a2 !important;
+}
+
+.admin a{
+    color: white !important;
+}
+.admin a:active{
+    color: rgb(239, 91, 91) !important;
+}
+.admin a:hover{
+    color: red !important;
+}
+
+
+
+
+
+
+/* Responsive styling */
+@media only screen and (max-width: 600px) {
+    .myClass {
+        margin-top: 2rem; /* Adjusted margin for better spacing on small screens */
+        text-align: center;
+        padding: 0 1rem; /* Add padding for mobile */
+    }
+
+    .navbar-brand {
+        font-size: 2rem; /* Smaller font size for smaller screens */
+    }
+
+    .mainHeading {
+        font-size: 2.5rem; /* Smaller heading size for mobile */
+    }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+        .sidebar {
+            background-color: #343a40;
+            height: 100%;
+        }
+
+        /* Style the navigation links with padding */
+        .nav-link {
+            border-left: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        /* Set hover effect for links */
+        .nav-link.active,
+        .nav-link:hover {
+            border-left: 3px solid #007bff;
+            background-color: #212529;
+        }
+
+        .navbar {
+            font-size: 18px;
+            padding: 15px;
+            background-color: #C63C51;
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-link.active {
+            color: #007bff !important;
+            font-weight: bold !important;
+        }
+
+        #logoutLink {
+            margin-top: 20px;
+            padding: 12px 15px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-link').click(function() {
+                $('.nav-link').removeClass('active'); // Remove active class from all links
+                $(this).addClass('active'); // Add active class to the clicked link
+            });
+
+            $('#logoutLink').click(function(event) {
+                event.preventDefault(); // Prevent the default action (navigation)
+                var confirmed = confirm("Are you sure you want to log out?");
+                if (confirmed) {
+                    window.location.href = $(this).attr('href'); // Redirect to the logout page
+                }
+            });
+        });
+    </script>
+    <title><?php echo TITLE ?></title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-danger p-0 shadow">
+        <a href="dashboard.php" class="navbar-brand col-md-2 ms-3">ServiceQuanta</a>
+    </nav>
+
+    <!-- side bar -->
+    <div class="container-fluid" style="margin-top: 70px;">
+        <div class="row">
+            <nav class="col-sm-2 bg-dark sidebar py-5">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="dashboard.php" class="nav-link text-white <?php if (PAGE == 'dashboard') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="work.php" class="nav-link text-white <?php if (PAGE == 'work') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fab fa-accessible-icon"></i>
+                                Work Order
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="request.php" class="nav-link text-white <?php if (PAGE == 'request') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-align-center"></i>
+                                Requests
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="asset.php" class="nav-link text-white <?php if (PAGE == 'assets') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-database"></i>
+                                Assets
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="technician.php" class="nav-link text-white <?php if (PAGE == 'technician') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fab fa-teamspeak"></i>
+                                Technician
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="requester.php" class="nav-link text-white <?php if (PAGE == 'requester') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-users"></i>
+                                Requester
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="sellReport.php" class="nav-link text-white <?php if (PAGE == 'sell') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-table"></i>
+                                Sell Report
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="workReport.php" class="nav-link text-white <?php if (PAGE == 'workreport') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-table"></i>
+                                Work Report
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="adminChangePass.php" class="nav-link text-white <?php if (PAGE == 'changepass') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                                <i class="fas fa-key"></i>
+                                Change Password
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../logout.php" id="logoutLink" class="nav-link text-white">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
